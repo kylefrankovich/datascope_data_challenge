@@ -90,12 +90,6 @@ for e in station_data:
 
 
 
-inp = [{'c1':10, 'c2':100}, {'c1':11,'c2':110}, {'c1':12,'c2':120}]
-df = pd.DataFrame(inp)
-
-for index, row in df.iterrows():
-    print row['c1'], row['c2']
-
 for index, row in station_data.iterrows():
     #print row['Location']
     string_coords = ''.join(
@@ -107,57 +101,4 @@ for index, row in station_data.iterrows():
     current_ID = row['MAP_ID']
     current_name = row['STOP_NAME']
     print coordinates, current_ID, current_name, index
-
-
-raw_data = {'student_name': ['Miller', 'Jacobson', 'Ali', 'Milner', 'Cooze', 'Jacon', 'Ryaner', 'Sone', 'Sloan', 'Piger', 'Riani', 'Ali'],
-        'test_score': [76, 88, 84, 67, 53, 96, 64, 91, 77, 73, 52, np.NaN]}
-df = pd.DataFrame(raw_data, columns = ['student_name', 'test_score'])
-
-
-df
-
-# Create a list to store the data
-grades = []
-
-# For each row in the column,
-for row in df['test_score']:
-    # if more than a value,
-    if row > 95:
-        # Append a letter grade
-        grades.append('A')
-    # else, if more than a value,
-    elif row > 90:
-        # Append a letter grade
-        grades.append('A-')
-    # else, if more than a value,
-    elif row > 85:
-        # Append a letter grade
-        grades.append('B')
-    # else, if more than a value,
-    elif row > 80:
-        # Append a letter grade
-        grades.append('B-')
-    # else, if more than a value,
-    elif row > 75:
-        # Append a letter grade
-        grades.append('C')
-    # else, if more than a value,
-    elif row > 70:
-        # Append a letter grade
-        grades.append('C-')
-    # else, if more than a value,
-    elif row > 65:
-        # Append a letter grade
-        grades.append('D')
-    # else, if more than a value,
-    elif row > 60:
-        # Append a letter grade
-        grades.append('D-')
-    # otherwise,
-    else:
-        # Append a failing grade
-        grades.append('Failed')
-
-# Create a column from the list
-df['grades'] = grades
 
