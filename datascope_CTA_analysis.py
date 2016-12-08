@@ -45,6 +45,10 @@ data.iloc[0]
 
 station_data.iloc[0]
 
+# get loop IDs
+
+station_data[station_data['STATION_NAME'] == 'Wilson']
+
 station_data[station_data['STATION_NAME'] == 'Wilson']['Location']
 
 station_data[station_data['MAP_ID'] == 41450]['Location'].iloc[0] # gives string of coordinates
@@ -102,3 +106,5 @@ for index, row in station_data.iterrows():
     current_name = row['STOP_NAME']
     print coordinates, current_ID, current_name, index
 
+for e in dict:
+    print dict[e]
